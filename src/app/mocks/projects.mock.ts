@@ -1,4 +1,4 @@
-import { ProjectModel } from '../components/models/project.model';
+import { ProjectModel } from '../models/project.model';
 
 export class ProjectsMocks {
   public static getProjectsByCustomerId(customerId: number): ProjectModel[] {
@@ -8,19 +8,25 @@ export class ProjectsMocks {
         projectId: 'dsdsds-dsdsd-ddsds',
         campaigns: [
           {
-            campaignName: 'cobro juridico',
-            campaignId: 'dsds-dsd456-ds45d4s',
-            link: 'load-file',
+            title: 'cobro juridico',
+            cardId: 'dsds-dsd456-ds45d4s',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
           },
           {
-            campaignName: 'cobro pre juridico',
-            campaignId: 'dsds-dsd456-4564ddf',
-            link: 'load-file',
+            title: 'cobro pre juridico',
+            cardId: 'dsds-dsd456-4564ddf',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
           },
           {
-            campaignName: 'Recuperación',
-            campaignId: 'dsds-dsd456-12ddd54d',
-            link: 'load-file',
+            title: 'Recuperación',
+            cardId: 'dsds-dsd456-12ddd54d',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
           },
         ],
       },
@@ -29,9 +35,11 @@ export class ProjectsMocks {
         projectId: 'dsdsds-dsdsd-ddsds',
         campaigns: [
           {
-            campaignName: 'Cobranza',
-            campaignId: 'dsds-dsd456-4sd4s4s5',
-            link: 'load-file',
+            title: 'Cobranza',
+            cardId: 'dsds-dsd456-4sd4s4s5',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
           },
         ],
       },

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectModel } from '../../components/models/project.model';
+import { ProjectModel } from '../../models/project.model';
 import { ProjectsMocks } from '../../mocks/projects.mock';
 
 @Component({
@@ -18,6 +18,7 @@ export class ProjectPageComponent implements OnInit {
   }
 
   private getProjects(): ProjectModel[] {
+    debugger;
     return this.projects = ProjectsMocks.getProjectsByCustomerId(1);
   }
 

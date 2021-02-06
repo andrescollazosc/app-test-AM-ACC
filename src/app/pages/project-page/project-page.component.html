@@ -2,10 +2,10 @@
   <h3 class="mt-5">{{ project.projectName }}</h3>
 
   <div class="row">
-    <app-card-campaing
+    <app-card-main
     *ngFor="let campaign of project.campaigns"
     [configCampaign]="campaign"
     class="col-12 col-sm-12 col-md-5 col-lg-4"
-  ></app-card-campaing>
+  ></app-card-main>
   </div>
 </div>
