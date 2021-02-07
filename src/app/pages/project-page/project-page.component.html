@@ -1,8 +1,8 @@
-<app-spinner *ngIf="isLoad" class="mt-5"></app-spinner>
-
 <div>
   <app-search-bar (eventSearch)="searchProject($event)"></app-search-bar>
 </div>
+
+<app-spinner *ngIf="isLoad" class="mt-5"></app-spinner>
 
 <div *ngIf="!isLoad">
   <div *ngFor="let project of projects">
