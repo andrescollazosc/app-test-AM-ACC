@@ -8,6 +8,7 @@ import { ProjectPageComponent } from './pages/project-page/project-page.componen
 import { CardMainComponent } from './components/card-main/card-main.component';
 import { LoadFilePageComponent } from './pages/load-file-page/load-file-page.component';
 import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-das
     ProjectPageComponent,
     CardMainComponent,
     LoadFilePageComponent,
-    MainDashboardPageComponent
+    MainDashboardPageComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

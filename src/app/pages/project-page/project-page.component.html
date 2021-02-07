@@ -1,11 +1,17 @@
-<div *ngFor="let project of projects">
-  <h3 class="mt-5">{{ project.projectName }}</h3>
+<app-spinner *ngIf="isLoad" class="mt-5"></app-spinner>
 
-  <div class="row">
-    <app-card-main
-    *ngFor="let campaign of project.campaigns"
-    [configCampaign]="campaign"
-    class="col-12 col-sm-12 col-md-5 col-lg-4"
-  ></app-card-main>
+<div *ngIf="!isLoad">
+  <div *ngFor="let project of projects">
+    <h3 class="mt-5">{{ project.projectName }}</h3>
+  
+    <div class="row">
+      <app-card-main
+        *ngFor="let campaign of project.campaigns"
+        [configCampaign]="campaign"
+        class="col-12 col-sm-12 col-md-5 col-lg-4"
+      ></app-card-main>
+    </div>
   </div>
 </div>
+
+
