@@ -9,25 +9,27 @@ import { ProjectsMocks } from '../../mocks/projects.mock';
 })
 export class ProjectPageComponent implements OnInit {
   public projects: ProjectModel[] = [];
+  public projectsClone: ProjectModel[] = [];
   public isLoad = true;
-
-  constructor() {}
 
   ngOnInit(): void {
     this.getProjects();
   }
 
-  public searchProject(term: string): void{
-    
-    this.projects = term.length > 0? this.projects.filter(
-      x=>x.projectName.toLowerCase().match(term.toLowerCase())
-    ):this.getProjects();
+  public searchProject(term: string): void {
+    this.projects =
+      term.length > 0
+        ? this.projects.filter((x) =>
+            x.projectName.toLowerCase().match(term.toLowerCase())
+          )
+        : this.projectsClone;
   }
 
   private getProjects(): ProjectModel[] {
     setTimeout(() => {
       this.isLoad = false;
       this.projects = ProjectsMocks.getProjectsByCustomerId(1);
+      this.projectsClone = [...this.projects];
     }, 1500);
 
     return this.projects;
