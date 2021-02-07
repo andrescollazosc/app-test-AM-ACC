@@ -17,6 +17,13 @@ export class ProjectPageComponent implements OnInit {
     this.getProjects();
   }
 
+  public searchProject(term: string): void{
+    
+    this.projects = term.length > 0? this.projects.filter(
+      x=>x.projectName.toLowerCase().match(term.toLowerCase())
+    ):this.getProjects();
+  }
+
   private getProjects(): ProjectModel[] {
     setTimeout(() => {
       this.isLoad = false;

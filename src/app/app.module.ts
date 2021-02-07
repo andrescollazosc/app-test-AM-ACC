@@ -9,6 +9,7 @@ import { CardMainComponent } from './components/card-main/card-main.component';
 import { LoadFilePageComponent } from './pages/load-file-page/load-file-page.component';
 import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     CardMainComponent,
     LoadFilePageComponent,
     MainDashboardPageComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

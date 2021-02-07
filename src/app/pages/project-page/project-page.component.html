@@ -1,5 +1,9 @@
 <app-spinner *ngIf="isLoad" class="mt-5"></app-spinner>
 
+<div>
+  <app-search-bar (eventSearch)="searchProject($event)"></app-search-bar>
+</div>
+
 <div *ngIf="!isLoad">
   <div *ngFor="let project of projects">
     <h3 class="mt-5">{{ project.projectName }}</h3>
