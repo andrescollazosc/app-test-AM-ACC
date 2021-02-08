@@ -43,6 +43,39 @@ export class ProjectsMocks {
           },
         ],
       },
+      {
+        projectName: 'Cartera BackOffice',
+        projectId: 'ds45-gf454-gf45d656',
+        campaigns: [
+          {
+            title: 'cobro pre juridico',
+            cardId: 'dsds-dsd456-ds45dq4561',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
+          },
+          {
+            title: 'cobro pos juridico',
+            cardId: 'dsds-dsd456-78a44',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
+          },
+          {
+            title: 'Recuperación',
+            cardId: 'dsds-dsd456-s5d45d',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
+          },{
+            title: 'cobro juridico',
+            cardId: 'dsds-dsd456-ss2s1d2s5',
+            link: '/load-file',
+            icon: 'far fa-file-excel',
+            colorIcon: 'icon-green-color'
+          },
+        ]
+      }
     ];
   }
 }

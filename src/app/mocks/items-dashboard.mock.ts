@@ -8,19 +8,19 @@ export class ItemsDashBoardMock {
             link: '',
             title: 'Configuración cliente',
             icon: 'fas fa-user-cog',
-            colorIcon: 'icon-orange-color'
+            colorIcon: 'icon-dark-blue-color'
         },
         {
             link: 'projects',
             title: 'Notificaciones',
             icon: 'fas fa-bell',
-            colorIcon: 'icon-orange-color'
+            colorIcon: 'icon-dark-blue-color'
         },
         {
             link: '',
             title: 'Reportes y documentos',
             icon: 'fas fa-file-alt',
-            colorIcon: 'icon-orange-color'
+            colorIcon: 'icon-dark-blue-color'
         }];
     }
 

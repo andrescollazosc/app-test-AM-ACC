@@ -3,5 +3,5 @@ export interface CardMainModel {
     title: string;
     link: string;
     icon: string;
-    colorIcon: 'icon-orange-color' | 'icon-green-color';
+    colorIcon: 'icon-orange-color' | 'icon-green-color' | 'icon-dark-blue-color';
 }
