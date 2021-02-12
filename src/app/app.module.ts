@@ -10,6 +10,8 @@ import { LoadFilePageComponent } from './pages/load-file-page/load-file-page.com
 import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
+import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     LoadFilePageComponent,
     MainDashboardPageComponent,
     SpinnerComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    UploadFileComponent,
+    PrimaryButtonComponent
   ],
   imports: [
     BrowserModule,

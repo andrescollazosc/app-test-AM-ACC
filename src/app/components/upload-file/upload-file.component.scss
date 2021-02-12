@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+@import '../../styles/typografy';
+
+.container-input-file {
+    background-color: $dark-blue-color;
+    color: #fff;
+    cursor: pointer;
+    font-family: Nunito, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 15px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 20rem;
+    height: 100px;
+    border-radius: 6px;
+}
+
+.container-input-file input {
+    border: 10000px solid transparent;
+    cursor: pointer;
+    font-size: 10000px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -100
+}
+
+.fa-upload{
+    font-size: 2rem;
+}
