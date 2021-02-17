@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-test-AM-ACC';
+
+  public onActivate(value: any):void {
+    window.scroll(0,0);
+  }
 }

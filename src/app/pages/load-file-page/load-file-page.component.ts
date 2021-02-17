@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoNotification } from 'src/app/models/info-notification.model';
+import { NotificationService } from '../../services/notification.service';
+
 
 @Component({
   selector: 'app-load-file-page',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadFilePageComponent implements OnInit {
 
-  constructor() { }
+  public info: InfoNotification;
+
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
+    this.getNotification();
+  }
+
+  private getNotification():void {
+    this.info=this.notificationService.getInfoNotification();
   }
 
 }

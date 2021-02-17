@@ -10,7 +10,7 @@
     font-weight: bold;
     margin: 0 auto 0;
     min-height: 15px;
-    padding: 10px;
+    padding: 15px 0;
     position: relative;
     text-align: center;
     width: 20rem;
@@ -18,16 +18,23 @@
     border-radius: 6px;
 }
 
-.container-input-file input {
+.custom-file-upload{
+    border: 1px solid red;
+}
+
+.container-input-file:hover {
+    filter:brightness(90%);
+}
+
+.container-input-file input{
     border: 10000px solid transparent;
     cursor: pointer;
     font-size: 10000px;
     margin: 0;
-    opacity: 0;
     outline: 0 none;
     padding: 0;
     position: absolute;
-    right: -100
+    right: -100;
 }
 
 .fa-upload{
