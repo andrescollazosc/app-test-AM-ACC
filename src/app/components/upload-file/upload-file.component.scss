@@ -1,42 +1,61 @@
 @import '../../styles/colors';
 @import '../../styles/typografy';
 
-.container-input-file {
-    background-color: $dark-blue-color;
-    color: #fff;
-    cursor: pointer;
-    font-family: Nunito, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 auto 0;
-    min-height: 15px;
-    padding: 15px 0;
+.file{
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-start;
     position: relative;
+
+    
     text-align: center;
-    width: 20rem;
-    height: 100px;
+}
+
+.file.is-boxed .file-label {
+    flex-direction: column;
+}
+
+.file-label {
+    align-items: stretch;
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
     border-radius: 6px;
 }
 
-.custom-file-upload{
-    border: 1px solid red;
+.file-icon{
+    font-size: 22px;
 }
 
-.container-input-file:hover {
-    filter:brightness(90%);
-}
-
-.container-input-file input{
-    border: 10000px solid transparent;
-    cursor: pointer;
-    font-size: 10000px;
-    margin: 0;
-    outline: 0 none;
-    padding: 0;
+.file-input {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    outline: 0;
     position: absolute;
-    right: -100;
+    top: 0;
+    width: 100%;
 }
 
-.fa-upload{
-    font-size: 2rem;
+.file.is-boxed .file-cta {
+    flex-direction: column;
+    height: auto;
+    padding: 1em 3em;
+}
+
+.file-cta {
+    background-color: $dark-blue-color;
+    color: #fff;
+    font-family: Nunito, sans-serif;
+}
+
+.file.is-boxed.has-name .file-name {
+    border-radius: 0 0 .375em .375em;
+    border-width: 0 1px 1px;
+}
+
+.file-name{
+    font-family: Nunito, sans-serif;
 }

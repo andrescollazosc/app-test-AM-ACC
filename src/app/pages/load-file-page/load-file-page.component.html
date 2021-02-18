@@ -1,19 +1,26 @@
 <div class="elements-container">
-    <h3 class="title">
-        {{info?.project?.description}} - <small>{{info?.campaign?.description}}</small>
-    </h3>
-    
-    <div class="file-load-container" >
-        <div class="upload-item">
-            <app-upload-file></app-upload-file>
-        </div>
+  <h3 class="title">
+    {{ info?.project?.description }} -
+    <small>{{ info?.campaign?.description }}</small>
+  </h3>
 
-        <div class="upload-item">
-            <app-upload-file></app-upload-file>
-        </div>
-
-        <div class="button-item">
-            <app-primary-button></app-primary-button>
-        </div>
+  <div class="file-load-container">
+    <div class="upload-item">
+      <app-upload-file
+        [fileUpload]="configNotificationFile"
+        (fileUploadEvent)="getFileNotification($event)"
+      ></app-upload-file>
     </div>
+
+    <div class="upload-item">
+        <app-upload-file
+        [fileUpload]="configDetailNotificationFile"
+        (fileUploadEvent)="getFileDetailNotification($event)"
+      ></app-upload-file>
+    </div>
+
+    <div class="button-item">
+      <app-primary-button (click)="uploadFiles()"></app-primary-button>
+    </div>
+  </div>
 </div>
