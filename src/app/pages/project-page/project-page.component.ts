@@ -1,23 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectModel } from '../../models/project.model';
+import { ProjectModel, ProjectCampaigns } from '../../models/project.model';
 import { ProjectsMocks } from '../../mocks/projects.mock';
 import { NotificationService } from 'src/app/services/notification.service';
 import { CardMainModel } from '../../models/card-main.model';
 import { GenericModel } from '../../models/generic.model';
 import { InfoNotification } from '../../models/info-notification.model';
+import { ProjectService } from 'src/app/services/project.service';
+import { finalize } from 'rxjs/operators';
+import { CampaignModel } from '../../models/campaign.model';
 
 @Component({
   selector: 'app-project-page',
   templateUrl: './project-page.component.html',
   styleUrls: ['./project-page.component.scss'],
 })
-
 export class ProjectPageComponent implements OnInit {
   public projects: ProjectModel[] = [];
   public projectsClone: ProjectModel[] = [];
   public isLoad = true;
+  public projectsItems: ProjectCampaigns[] = [];
 
-  constructor(private notificationService: NotificationService){}
+  constructor(
+    private notificationService: NotificationService,
+    private projectService: ProjectService
+  ) {}
 
   ngOnInit(): void {
     this.getProjects();
@@ -33,32 +39,63 @@ export class ProjectPageComponent implements OnInit {
   }
 
   public getCampaign(campaignModel: CardMainModel, projectModel: ProjectModel) {
-    const project: GenericModel={
+    const project: GenericModel = {
       id: projectModel.projectId,
       description: projectModel.projectName,
     };
 
-    const campaign: GenericModel={
+    const campaign: GenericModel = {
       id: campaignModel.cardId,
-      description: campaignModel.title
+      description: campaignModel.title,
     };
 
-    const infoNotification: InfoNotification={
+    const infoNotification: InfoNotification = {
       campaign,
       project,
-      id: "aeiou",
+      id: 'aeiou',
     };
 
     this.notificationService.setInfoNotification(infoNotification);
   }
 
-  private getProjects(): ProjectModel[] {
-    setTimeout(() => {
-      this.isLoad = false;
-      this.projects = ProjectsMocks.getProjectsByCustomerId(1);
-      this.projectsClone = [...this.projects];
-    }, 1500);
+  private getProjects(): void {
+    this.projectService
+      .getProjects()
+      .pipe(
+        finalize(() => {
+          this.isLoad = false;
+          this.mapProjects();
+          this.projectsClone = [...this.projects];
+        })
+      )
+      .subscribe((result) => {
+        this.projectsItems = result;
+      });
+  }
 
-    return this.projects;
+  private mapProjects(): void {
+    this.projectsItems.forEach((project) => {
+      this.projects.push({
+        projectName: project.projectName,
+        projectId: project.id,
+        campaigns: this.mapCampaign(project.campaigns),
+      });
+    });
+  }
+
+  private mapCampaign(campaignsModels: CampaignModel[]): CardMainModel[] {
+    let campaigns: CardMainModel[] = [];
+
+    campaignsModels.forEach((campaign) => {
+      campaigns.push({
+        title: campaign.campaignName,
+        cardId: campaign.id,
+        colorIcon: 'icon-green-color',
+        icon: 'far fa-file-excel',
+        link: '/load-file',
+      });
+    });
+
+    return campaigns;
   }
 }

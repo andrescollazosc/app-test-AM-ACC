@@ -12,6 +12,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PrimaryButtonComponent } from './components/primary-button/primary-butt
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
