@@ -5,18 +5,20 @@
   </h3>
 
   <div class="file-load-container">
-    <div class="upload-item">
-      <app-upload-file
-        [fileUpload]="configNotificationFile"
-        (fileUploadEvent)="getFileNotification($event)"
-      ></app-upload-file>
-    </div>
-
-    <div class="upload-item">
+    <div class="container-uploads">
+      <div class="upload-item">
         <app-upload-file
-        [fileUpload]="configDetailNotificationFile"
-        (fileUploadEvent)="getFileDetailNotification($event)"
-      ></app-upload-file>
+          [fileUpload]="configNotificationFile"
+          (fileUploadEvent)="getFileNotification($event)"
+        ></app-upload-file>
+      </div>
+
+      <div class="upload-item">
+        <app-upload-file
+          [fileUpload]="configDetailNotificationFile"
+          (fileUploadEvent)="getFileDetailNotification($event)"
+        ></app-upload-file>
+      </div>
     </div>
 
     <div class="button-item">
