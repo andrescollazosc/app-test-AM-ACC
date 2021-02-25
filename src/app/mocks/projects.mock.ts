@@ -5,7 +5,7 @@ export class ProjectsMocks {
     return [
       {
         projectName: 'Cartera',
-        projectId: 'dsdsds-dsdsd-ddsds',
+        id: 'dsdsds-dsdsd-ddsds',
         campaigns: [
           {
             title: 'cobro juridico',
@@ -32,7 +32,7 @@ export class ProjectsMocks {
       },
       {
         projectName: 'Cobros importantes',
-        projectId: 'dsdsds-dsdsd-ddsds',
+        id: 'dsdsds-dsdsd-ddsds',
         campaigns: [
           {
             title: 'Cobranza',
@@ -45,7 +45,7 @@ export class ProjectsMocks {
       },
       {
         projectName: 'Cartera BackOffice',
-        projectId: 'ds45-gf454-gf45d656',
+        id: 'ds45-gf454-gf45d656',
         campaigns: [
           {
             title: 'cobro pre juridico',

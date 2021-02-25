@@ -3,7 +3,7 @@ import { CardMainModel } from './card-main.model';
 
 export interface ProjectModel {
   projectName: string;
-  projectId: string;
+  id: string;
   campaigns: CardMainModel[];
 }
 

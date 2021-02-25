@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { InfoNotification } from 'src/app/models/info-notification.model';
 import { UploadFile } from 'src/app/models/upload-file.model';
 import { NotificationService } from '../../services/notification.service';
+import { ProcessSendService } from '../../services/process-send.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-load-file-page',
@@ -13,8 +15,12 @@ export class LoadFilePageComponent implements OnInit {
 
   public configNotificationFile: UploadFile;
   public configDetailNotificationFile: UploadFile;
+  public response: any;
 
-  constructor(private notificationService: NotificationService) {}
+  constructor(
+    private notificationService: NotificationService,
+    private proccessSend: ProcessSendService
+  ) {}
 
   ngOnInit(): void {
     this.initializeData();
@@ -30,8 +36,14 @@ export class LoadFilePageComponent implements OnInit {
     console.log(this.info);
   }
 
-  public uploadFiles():void {
-    alert("Hello World!!!");
+  public uploadFiles(): void {
+    this.proccessSend.saveProcess(this.info)
+    .pipe(finalize(()=>{
+      console.log(this.response);
+    }))
+    .subscribe((result) => {
+      this.response = result;
+    });
   }
 
   private initializeData(): void {
