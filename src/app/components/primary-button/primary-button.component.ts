@@ -1,4 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { ButtonModel } from '../../models/button.model';
 
 @Component({
   selector: 'app-primary-button',
@@ -7,6 +8,8 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 
 export class PrimaryButtonComponent implements OnInit {
+
+  @Input() configButton: ButtonModel;
 
   constructor() { }
 

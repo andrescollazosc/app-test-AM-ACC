@@ -1,27 +1,31 @@
-@import '../../styles/colors';
-@import '../../styles/typografy';
+@import "../../styles/colors";
+@import "../../styles/typografy";
 
-.primary-button{
-    border: none;
-    width: 300px;
-    height: 4rem;
-    background-color: $blue-color;
-    border-radius: 6px;
-    color: $white-color;
-    font-family: Nunito, sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 5px;
-    align-items: center;
-    outline: none;
+.primary-button {
+  border: none;
+  width: 300px;
+  height: 4rem;
+  background-color: $blue-color;
+  border-radius: 6px;
+  color: $white-color;
+  font-family: Nunito, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+  outline: none;
 }
 
-.primary-button i{
-    font-size: 26px;
+.primary-button:hover {
+    filter: brightness(110%);
 }
 
-.text{
-    margin-left: 10px;
-    font-size: 20px;
+.primary-button i {
+  font-size: 26px;
+}
+
+.text {
+  margin-left: 10px;
+  font-size: 20px;
 }
