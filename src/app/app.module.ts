@@ -13,6 +13,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     SpinnerComponent,
     SearchBarComponent,
     UploadFileComponent,
-    PrimaryButtonComponent
+    PrimaryButtonComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

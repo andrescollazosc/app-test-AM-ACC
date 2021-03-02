@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectModel, ProjectCampaigns } from '../../models/project.model';
-import { ProjectsMocks } from '../../mocks/projects.mock';
 import { NotificationService } from 'src/app/services/notification.service';
 import { CardMainModel } from '../../models/card-main.model';
 import { GenericModel } from '../../models/generic.model';
@@ -8,6 +7,7 @@ import { InfoNotification } from '../../models/info-notification.model';
 import { ProjectService } from 'src/app/services/project.service';
 import { finalize } from 'rxjs/operators';
 import { CampaignModel } from '../../models/campaign.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-page',
@@ -22,7 +22,8 @@ export class ProjectPageComponent implements OnInit {
 
   constructor(
     private notificationService: NotificationService,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -70,6 +71,9 @@ export class ProjectPageComponent implements OnInit {
       )
       .subscribe((result) => {
         this.projectsItems = result;
+      }, error => {
+        console.error('Ocurrio un error, ', error);
+        this.router.navigate(['error']);
       });
   }
 
