@@ -39,15 +39,12 @@ export class ProjectPageComponent implements OnInit {
         : this.projectsClone;
   }
 
-  public getCampaign(campaignModel: CardMainModel, projectModel: ProjectModel) {
-    const project: GenericModel = {
-      id: projectModel.projectId,
-      description: projectModel.projectName,
-    };
-
-    const campaign: GenericModel = {
+  public getCampaign(campaignModel: CardMainModel, project: ProjectModel) {
+    
+    const campaign: CampaignModel = {
       id: campaignModel.cardId,
-      description: campaignModel.title,
+      campaignName: campaignModel.title,
+      projectId: null
     };
 
     const infoNotification: InfoNotification = {
@@ -81,7 +78,7 @@ export class ProjectPageComponent implements OnInit {
     this.projectsItems.forEach((project) => {
       this.projects.push({
         projectName: project.projectName,
-        projectId: project.id,
+        id: project.id,
         campaigns: this.mapCampaign(project.campaigns),
       });
     });
