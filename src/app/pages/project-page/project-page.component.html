@@ -1,10 +1,10 @@
-<div>
+<div class="container-page">
   <app-search-bar (eventSearch)="searchProject($event)"></app-search-bar>
 </div>
 
 <app-spinner *ngIf="isLoad" class="mt-5"></app-spinner>
 
-<div *ngIf="!isLoad">
+<div *ngIf="!isLoad" class="container-page">
   <div *ngFor="let project of projects">
     <h3 class="mt-5">{{ project.projectName }}</h3>
   
@@ -12,7 +12,6 @@
       <app-card-main
         *ngFor="let campaign of project.campaigns"
         [configCampaign]="campaign"
-        class="col-12 col-sm-12 col-md-5 col-lg-4"
         (cardMainEvent)="getCampaign(campaign, project)"
       ></app-card-main>
     </div>
@@ -20,3 +19,4 @@
 </div>
 
 
+<!-- class="col-12 col-sm-12 col-md-5 col-lg-4" -->
