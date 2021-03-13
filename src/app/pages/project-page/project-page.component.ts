@@ -69,7 +69,6 @@ export class ProjectPageComponent implements OnInit {
       .subscribe((result) => {
         this.projectsItems = result;
       }, error => {
-        console.error('Ocurrio un error, ', error);
         this.router.navigate(['error']);
       });
   }

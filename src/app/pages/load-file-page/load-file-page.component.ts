@@ -4,6 +4,10 @@ import { UploadFile } from 'src/app/models/upload-file.model';
 import { NotificationService } from '../../services/notification.service';
 import { ProcessSendService } from '../../services/process-send.service';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { ButtonModel } from 'src/app/models/button.model';
+import { Functions } from '../../util/functions';
+import { IconClassEnum } from 'src/app/enum/icon-class.enum';
 
 @Component({
   selector: 'app-load-file-page',
@@ -16,10 +20,12 @@ export class LoadFilePageComponent implements OnInit {
   public configNotificationFile: UploadFile;
   public configDetailNotificationFile: UploadFile;
   public response: any;
+  public setUpButton: ButtonModel;
 
   constructor(
     private notificationService: NotificationService,
-    private proccessSend: ProcessSendService
+    private proccessSend: ProcessSendService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,12 +49,15 @@ export class LoadFilePageComponent implements OnInit {
     }))
     .subscribe((result) => {
       this.response = result;
+    }, error => {
+      this.router.navigate(['error']);
     });
   }
 
   private initializeData(): void {
     this.getNotification();
     this.getConfigFiles();
+    this.configButton();
   }
 
   private getNotification(): void {
@@ -65,5 +74,9 @@ export class LoadFilePageComponent implements OnInit {
       label: 'Seleccionar Detalle',
       fileName: '',
     };
+  }
+
+  private configButton(): void {
+    this.setUpButton = Functions.configButton(IconClassEnum.fileUpLoad, 'Cargar data');
   }
 }

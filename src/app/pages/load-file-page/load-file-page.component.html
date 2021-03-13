@@ -22,7 +22,10 @@
     </div>
 
     <div class="button-item">
-      <app-primary-button (click)="uploadFiles()"></app-primary-button>
+      <app-primary-button
+        [configButton]="setUpButton"
+        (click)="uploadFiles()"
+      ></app-primary-button>
     </div>
   </div>
 </div>
