@@ -1,5 +1,5 @@
 export interface CampaignModel {
   id: string;
-  projectId: string;
+  // projectId: string;
   campaignName: string;
 }

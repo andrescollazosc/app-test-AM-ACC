@@ -43,6 +43,7 @@ export class LoadFilePageComponent implements OnInit {
   }
 
   public uploadFiles(): void {
+    debugger;
     this.proccessSend.saveProcess(this.info)
     .pipe(finalize(()=>{
       console.log(this.response);
@@ -50,6 +51,7 @@ export class LoadFilePageComponent implements OnInit {
     .subscribe((result) => {
       this.response = result;
     }, error => {
+      console.log('This is our error:', error);      
       this.router.navigate(['error']);
     });
   }

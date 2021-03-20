@@ -44,7 +44,7 @@ export class ProjectPageComponent implements OnInit {
     const campaign: CampaignModel = {
       id: campaignModel.cardId,
       campaignName: campaignModel.title,
-      projectId: null
+      // projectId: null
     };
 
     const infoNotification: InfoNotification = {
